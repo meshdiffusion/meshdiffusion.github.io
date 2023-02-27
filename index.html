@@ -288,7 +288,7 @@
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body">
-                <img src="./static/teaser/mesh_teaser.png" height="150%" />
+                <img src="./static/teaser/mesh_teaser.png" height="150%" style="margin-left: auto;margin-right: auto;display: block;"/>
                 <h3 class="is-size-6 subtitle has-text-centered" style="padding-top: 10px">
                     <p align="left">
                         We consider the task of generating realistic 3D shapes, which is useful for a variety of applications such as automatic scene generation and physical simulation.
@@ -402,8 +402,7 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
                     <h2 class="title is-4">Method Overview</h2>
                     <img src="./static/teaser/meshdiffusion_pipeline.png"/>
                     <div class="content has-text-justified" style="padding-top: 15px">
-                        <p> By parametrizing 3D meshes with deformable marching tetrahedra (DMTets), 
-                            we train a 3D diffusion model to directly generate 3D meshes.
+                        <p> MeshDiffusion uses a 3D diffusion model to generate 3D meshes parametrized by deformable marching tetrahedra (DMTets).
                         </p>
                     </div>
 
@@ -430,10 +429,10 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
             </div>
             <br>
             <div class="content has-text-justified">
-                <h2 class="title is-4">Reconstruction</h2>
+                <h2 class="title is-4">Unconditional Generation</h2>
                   <p>
-                    We run Marching cube to extract the mesh from trained clothing NeRF, and show it with the explicitly learned body mesh.
-                    Green indicates the mesh part extracted from NeRF-based clothing.
+                    With standard DDPM training and sampling, MeshDiffusion can generate phtotrealistic and diverse set of 3D meshes, 
+                    many of which are novel shapes not in the training set.
                   </p>
             </div>
             <div class="container">
@@ -457,6 +456,24 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
 
                 </div>
                 <div style="text-align: center;">Press <b>R</b> to reset views. </div>
+            </div>
+            <div class="content has-text-justified">
+                <h2 class="title is-4">Single-view Conditional Generation</h2>
+                  <p>
+                    Provided with an incomplete DMTet fitted on a single 2.5D view, MeshDiffusion can generate the full 3D mesh by completing the occluded regions.
+                  </p>
+            </div>
+            <div class="content has-text-justified">
+                <h2 class="title is-4">Interpolation</h2>
+                  <p>
+                    By using DDIM as the diffusion model sampler, the initial noise can be interpolated to create interpolated shapes.
+                  </p>
+            </div>
+            <div class="content has-text-justified">
+                <h2 class="title is-4">Texture</h2>
+                  <p>
+                    The generated meshes by MeshDiffusion can be textured by using state-of-the-arts methods like TEXTure.
+                  </p>
             </div>
         </div>
     </section>
@@ -708,17 +725,18 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
                 <div class="column is-full-width">
                     <h2 class="title is-4">Acknowledgement</h2>
                     <div class="content has-text-justified" style="padding-top: 15px">
-                        <p> We thank Sergey Prokudin, Weiyang Liu, Yuliang Xiu, Songyou
-                            Peng, Qianli Ma for fruitful discussions, and Peter Kulits, Zhen
-                            Liu, Yandong Wen, Hongwei Yi, Xu Chen, Soubhik Sanyal, Omri
-                            Ben-Dov, Shashank Tripathi for proofreading. 
-                            We also thank Betty Mohler, Sarah Danes, Natalia Marciniak, Tsvetelina Alexiadis, Claudia Gallatz, and Andres Camilo Mendoza Patino for their supports
-                            with data. This work was partially supported by the Max Planck
+                        <p> We thank Yuliang Xiu, Jinlong Yan, Tim Xiao, Haiwen Feng, Yandong Wen for constructive suggestions.
+                            We also thank Ziyu Wang and Yishu Miao for the idea inspiration.
+                            This work was partially supported by the Max Planck
                             ETH Center for Learning Systems.
                             <br>
-                            <b>Disclosure.</b> MJB has received research gift funds from Adobe, Intel, Nvidia, Meta/Facebook, and Amazon. MJB has financial interests in Amazon, Datagen Technologies, and Meshcapade GmbH. While MJB is a part-time employee of Meshcapade, his research was performed solely at, and funded solely by, the Max Planck Society.
-                            While TB is part-time employee of Amazon, this research was performed
-                            solely at, and funded solely by, MPI. </p>
+                            <b>Disclosure.</b> MJB has received research gift funds from Adobe, Intel, Nvidia, Meta/Facebook, and Amazon. 
+                            MJB has financial interests in Amazon, Datagen Technologies, and Meshcapade GmbH. 
+                            While MJB is a part-time employee of Meshcapade, his research was performed solely at, and funded solely by, the Max Planck Society.
+                            DN is supported by NSERC Discovery Grant (RGPIN-5011360) 
+                            and LP is supported by NSERC Discovery Grant (RGPIN-04653).
+                            We would like to thank Samsung Electronics Co., Ldt. for funding this research.
+                        </p>
                     </div>
                     
                 </div>
@@ -843,9 +861,9 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
                             <a href="https://niessnerlab.org/members/simon_giebenhain/profile.html">	Simon Giebenhain's</a> adoption for
                             <a href="https://simongiebenhain.github.io/NPHM/">NPHM</a>.
                         </p>
-                        <p style="text-align:center">
+                        <!-- <p style="text-align:center">
                             Please contact <a href="https://is.mpg.de/~yfeng">Yao Feng</a> for feedback and questions.
-                        </p>
+                        </p> -->
 
                     </div>
                 </div>

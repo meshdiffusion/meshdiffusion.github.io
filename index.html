@@ -428,15 +428,9 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
             <div class="columns is-centered" style="margin-top: 15px">
                 <div class="column is-full-width">
                     <h2 class="title is-4">Method Overview</h2>
-                    <img src="./static/teaser/overview.png"/>
+                    <img src="./static/teaser/meshdiffusion_pipeline.png"/>
                     <div class="content has-text-justified" style="padding-top: 15px">
-                        <p> SCARF takes monocular RGB video and clothing segmentation masks as input, and outputs a human avatar with separate body and clothing layers.
-                            Blue letters indicate optimizable modules or parameters. </p>
-                        <!-- <p><b>2.</b> We directly train our identity network on the raw neutral scans.</p>
-                        <p><b>3.</b> Building on 2D facial landmark detectors, we non-rigidly register a common template against all scans.</p>
-                        <p><b>4.</b> We estimate the ground truth deformation fields between expression using the registrations and directly supervise our expression network.</p>
-                        <p><b>5.</b> Our identity network represents shapes implicitly using an ensemble of local MLPs, each described by an individual latent vector.
-                            We incorporate a symmetry prior by mirroring the local coordinate systems of symmetric MLPs and share their parameters.</p> -->
+                        <p> By parametrizing 3D meshes with deformable marching tetrahedra (DMTet), we train a 3D diffusion model to directly generate 3D meshes. </p>
                     </div>
 
                 </div>

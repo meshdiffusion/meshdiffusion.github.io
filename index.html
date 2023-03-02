@@ -442,7 +442,6 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
                     <div class="item item-steve render_wrapper">
 			            <div id="mesh_chair_1" class="render_div"></div>
                     </div>
-                    
                     <div class="item item-steve render_wrapper">
 			            <div id="mesh_chair_2" class="render_div"></div>
                     </div>
@@ -452,6 +451,18 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
                     <div class="item item-steve render_wrapper">
 			            <div id="mesh_chair_3" class="render_div"></div>
                     </div>
+                    <div class="item item-steve render_wrapper">
+			            <div id="mesh_car_2" class="render_div"></div>
+                    </div>
+                    <!-- <div class="item item-steve render_wrapper">
+			            <div id="mesh_airplane_1" class="render_div"></div>
+                    </div>
+                    <div class="item item-steve render_wrapper">
+			            <div id="mesh_airplane_2" class="render_div"></div>
+                    </div>
+                    <div class="item item-steve render_wrapper">
+			            <div id="mesh_airplane_3" class="render_div"></div>
+                    </div> -->
 
                 </div>
                 <div style="text-align: center;">Press <b>R</b> to reset views. </div>
@@ -1018,14 +1029,12 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
                 loader.load( mesh_path, function ( geometry ) {
 
                     geometry.computeVertexNormals();
-                    let material_geo = new THREE.MeshStandardMaterial( { color: 0x444444, flatShading: true, roughness: 0.5, metalness: 0.3 } )
+                    //let material_geo = new THREE.MeshStandardMaterial( { color: 0xffffff, flatShading: true, roughness: 0.8, metalness: 0.1 } )
                     //let material_geo = new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false} )
-                    //const material_geo = new THREE.MeshPhongMaterial( {
-                    //                            vertexColors: true,
-                    //                            //color: 0x7CFC00, //0xCCE6FF,
-                    //                            flatShading: true,
-                    //                            specular: 0x222222,
-                    //                            shininess: 25,} );
+                    const material_geo = new THREE.MeshPhongMaterial( {
+                                                    color: 0xffffff,
+                                                    specular: 0x222222,
+                                                    shininess: 25,} );
 
                     const mesh_geo = new THREE.Mesh( geometry, material_geo);
                     // mesh_geo.castShadow = true;

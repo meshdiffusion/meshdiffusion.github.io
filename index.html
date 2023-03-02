@@ -1029,12 +1029,19 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
                 loader.load( mesh_path, function ( geometry ) {
 
                     geometry.computeVertexNormals();
-                    //let material_geo = new THREE.MeshStandardMaterial( { color: 0xffffff, flatShading: true, roughness: 0.8, metalness: 0.1 } )
                     //let material_geo = new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false} )
-                    const material_geo = new THREE.MeshPhongMaterial( {
-                                                    color: 0xffffff,
-                                                    specular: 0x222222,
-                                                    shininess: 25,} );
+                    //const material_geo = new THREE.MeshPhongMaterial( {
+                    //                                color: 0xffffff,
+                    //                                specular: 0x222222,
+                    //                                shininess: 25,} ); 
+                    
+                    //const material_geo = new THREE.MeshPhongMaterial( {
+                    //    vertexColors: false,
+                    //    color: 0xffffff, //0xCCE6FF,
+                    //    flatShading: true,
+                    //    specular: 0x222222,
+                    //    shininess: 25,} );
+                    let material_geo = new THREE.MeshStandardMaterial( { color: 0xffffff, flatShading: true, roughness: 0.6, metalness: 0.2 } )
 
                     const mesh_geo = new THREE.Mesh( geometry, material_geo);
                     // mesh_geo.castShadow = true;

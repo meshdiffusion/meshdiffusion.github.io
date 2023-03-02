@@ -462,18 +462,24 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
                     Provided with an incomplete DMTet fitted on a single 2.5D view, MeshDiffusion can generate the full 3D mesh by completing the occluded regions.
                   </p>
             </div>
+            <img src="./static/figures/cond_gen.png" height="100%" style="margin-left: auto;margin-right: auto;display: block;"/>
+
             <div class="content has-text-justified">
                 <h2 class="title is-4">Interpolation</h2>
                   <p>
                     By using DDIM as the diffusion model sampler, the initial noise can be interpolated to create interpolated shapes.
                   </p>
             </div>
+            <img src="./static/figures/interpolation_chair.png" height="70%" style="margin-left: auto;margin-right: auto;display: block;"/>
+
             <div class="content has-text-justified">
                 <h2 class="title is-4">Texture</h2>
                   <p>
-                    The generated meshes by MeshDiffusion can be textured by using state-of-the-arts methods like TEXTure.
+                    The generated meshes by MeshDiffusion can be textured by using state-of-the-arts methods like <a href="https://github.com/TEXTurePaper/TEXTurePaper">TEXTure</a>.
                   </p>
             </div>
+            <img src="./static/figures/more_texture.png" height="100%" style="margin-left: auto;margin-right: auto;display: block;"/>
+
         </div>
     </section>
 
@@ -1339,11 +1345,18 @@ To overcome these shortcomings, we take advantage of the graph structure of mesh
             //setup_render_divs("mesh_car_4", './results/mesh/female_outfit2_hybrid_0903_more_demo_.ply')
             //setup_render_divs("mesh_car_5", './results/mesh/male-3-casual_hybrid_0903_more_demo_.ply')
             //setup_render_divs("mesh_car_6", './results/mesh/male_outfit1_hybrid_0903_more_demo_.ply')
-            setup_render_divs("mesh_chair_1", './results/mesh/female_outfit2_hybrid_0903_more_demo_.ply')
-            setup_render_divs("mesh_chair_2", './results/mesh/male_outfit1_hybrid_0903_more_demo_.ply')
-            setup_render_divs("mesh_chair_3", './results/mesh/subject_016_outfit_1_motion_1_hybrid_0903_more_demo_.ply')
-            setup_render_divs("mesh_car_1", './results/mesh/DSC_7147_hybrid_0903_more_demo_.ply')
-            setup_render_divs("mesh_car_3", './results/mesh/female-3-casual_hybrid_0903_more_demo_.ply')
+
+            setup_render_divs("mesh_chair_1", './results/mesh/chair1.ply')
+            setup_render_divs("mesh_chair_2", './results/mesh/chair2.ply')
+            setup_render_divs("mesh_chair_3", './results/mesh/chair3.ply')
+            setup_render_divs("mesh_car_1", './results/mesh/car1.ply')
+            setup_render_divs("mesh_car_2", './results/mesh/car2.ply')
+            setup_render_divs("mesh_car_3", './results/mesh/car3.ply')
+            setup_render_divs("mesh_airplane_1", './results/mesh/airplane1.ply')
+            setup_render_divs("mesh_airplane_2", './results/mesh/airplane2.ply')
+            setup_render_divs("mesh_airplane_3", './results/mesh/airplane3.ply')
+
+            
             //setup_render_divs("mesh_chair_2", './models/mesh_0079.ply')
             //setup_render_divs("mesh_chair_3", './models/mesh_0079.ply')
             //setup_render_divs("mesh_car_1", './models/mesh_0112.ply')
